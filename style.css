@@ -1,0 +1,398 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Baloo Thambi 2', serif;
+    outline: none;
+}
+
+/**1rem equals 60px;
+to decrease it to 10px, decrease html font-size*/
+
+html{
+    font-size: 62.5%;
+}
+
+:root{
+    --main-bg-color: plum;
+    --primary-color: darkmagenta;
+    --secondary-color: darkorchid;
+    --search-color: cornsilk;
+    --text-color: darkgoldenrod;
+    --hover-text-color: orangered;
+    --active-icon-color: crimson;
+}
+
+/**How to use the above
+body{
+    background-color: var(--main-bg-color);
+}*/
+
+.sidebar{
+    width: 15vw;
+    height: 100vh;
+    background-color: var(--main-bg-color);
+    position: fixed;
+    left: -15vw;
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+    z-index: 100;
+    transition: left .2s;
+}
+
+.change .sidebar{
+    left: 0;
+}
+
+.cws-menu{
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--main-bg-color);
+    border-bottom-right-radius: 1rem;
+    position: absolute;
+    top: 0;
+    right: -3.5rem;
+    padding: .5rem;
+    box-sizing: border-box;
+    transition: right .3s .2s;
+}
+
+.change .cws-menu{
+    right: 0;
+}
+
+.line{
+    width: 2.5rem;
+    height: .3rem;
+    background-color: var(--secondary-color);
+    position: absolute;
+    transform-origin: left;
+    transition: transform .3s, top .3s .3s, 
+    opacity .2s;
+}
+
+.une{
+    top:1.2rem;
+}
+
+.deux{
+    top: 1.8rem;
+}
+
+.trois{
+    top: 2.4rem;
+}
+
+.change .une{
+    top: 2.4rem;
+    transform: rotate(-40deg) translateY(.3rem);
+    transition: top .3s, transform .3s .3s;
+}
+
+.change .deux{
+    opacity: 0;
+}
+
+.change .trois{
+    top: 1.2rem;
+    transform: rotate(40deg) translateY(-.3rem);
+    transition: top .3s, transform .3s .3s;
+}
+
+.card{
+    display: flex;
+}
+
+.cws-image{
+    width: 5rem;
+    border-radius: .5rem;
+}
+
+.card-body{
+    margin-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.card-title{
+    font-size: 2rem;
+    margin-right: 3rem;
+    color: var(--primary-color);
+    letter-spacing: .1rem;
+}
+
+.card-subtitle{
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.search-form{
+    margin: 2rem 0 1rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.search-input{
+    width: 100%;
+    height: 4rem;
+    background-color: var(--search-color);
+    border-radius: .5rem;
+    border: none;
+    padding: 0 1rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    letter-spacing: .1rem;
+}
+
+.search-btn{
+    background-color: transparent;
+    border: none;
+    transform: translateX(-150%);
+}
+
+.search-btn i{
+    font-size: 2rem;
+    color: var(--secondary-color);
+}
+
+.nav-list{
+    margin-top: 3rem;
+}
+
+.nav-item{
+    margin: 2rem 0;
+}
+
+.nav-link{
+    width: 100;
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.nav-link-text{
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    flex-grow: 1;
+}
+
+.nav-link i:first-child{
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem;
+    border-radius: .3rem;
+    transition: color .2s;
+}
+
+.nav-link:hover i:first-child{
+    color: var(--active-icon-color);
+}
+
+.change.nav-link i:first-child{
+    color: var(--active-icon-color);
+}
+
+.nav-link i:last-child{
+    margin-right: 2.2rem;
+    font-size: 1.6rem;
+    transition: transform .5s;
+}
+
+.change > i:last-child{
+    transform: rotate(90deg);
+}
+
+.sub-nav-list{
+    width: 90%;
+    margin-left: auto;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s;
+}
+
+.change.sub-nav-list{
+    max-height: 10rem;
+}
+
+.sub-nav-item{
+    margin: .5rem 0;
+}
+
+.sub-nav-link{
+    font-size: 1.5rem;
+    color: var(--text-color);
+    transition: color .2s;
+}
+
+.sub-nav-link:hover{
+    color: var(--hover-text-color);
+}
+
+.sub-nav-link i{
+    font-size: 1rem;
+    margin-right: .5rem;
+    transition: color .2s;
+}
+
+.sub-nav-link:hover i{
+    color: var(--active-icon-color);
+}
+
+.bottom-list{
+    width: 100%;
+    background-color: var(--primary-color);
+    position: absolute;
+    bottom: 0;
+    padding: .5rem 0;
+    display: flex;
+    justify-content: space-around;
+    transform: translateX(-1rem);
+}
+
+.bottom-list-link{
+    position: relative;
+}
+
+.bottom-list-link i{
+    font-size: 1.6rem;
+    color: var(--secondary-color);
+    transition: color .3s;
+}
+
+.bottom-list-link:hover i{
+    color: var(--active-icon-color);
+}
+
+.bottom-list-link span{
+    font-family: 'Heebo', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    color: cornsilk;
+    position: absolute;
+    top: -70%;
+    right: -50%;
+    width: 1.4rem;
+    height: 1.4rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom-list-item:nth-child(1) span{
+    background-color: darkkhaki;
+}
+
+.bottom-list-item:nth-child(2) span{
+    background-color: darkred;
+}
+
+.bottom-list-item:nth-child(3) span{
+    background-color: darksalmon;
+}
+
+.main-section{
+    width: 100vw;
+    position: relative;
+    left: 0;
+    transition: all .2s;
+}
+
+.change .main-section{
+    left: 15vw;
+    width: 85vw;
+}
+
+.header{
+    width: inherit;
+    height: 100vh;
+    background: linear-gradient(
+    rgba(255, 255, 255, 0.2), 
+    rgba(255, 255, 255, 0.2)),
+    url(images/nature-bird-red.jpg) center no-repeat;
+    background-size: cover;
+}
+
+.heading{
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12rem;
+    color: var(--main-bg-color);
+    letter-spacing: 1rem;
+}
+
+@media(max-width: 1500px){
+    .sidebar{
+        width: 20vw;
+        left: -20vw;
+    }
+
+    .change .main-section{
+        left: 20vw;
+        width: 80vw;
+    }
+}
+
+@media(max-width: 1200px){
+    .sidebar{
+        width: 25vw;
+        left: -25vw;
+    }
+
+    .change .main-section{
+        left: 25vw;
+        width: 75vw;
+    }
+}
+
+@media(max-width: 900px){
+    .sidebar{
+        width:30vw;
+        left: -30vw;
+    }
+
+    .change .main-section{
+        left: 30vw;
+        width: 70vw;
+    }
+
+    .heading{
+        font-size: 8rem;
+    }
+}
+
+@media(max-width: 700px){
+    .sidebar{
+        width: 50vw;
+        left: -50vw;
+    }
+
+    .change .main-section{
+        left: 50vw;
+        width: 50vw;
+    }
+
+    .heading{
+        display: none;
+    }
+}
+
+@media(max-width: 400px){
+    .sidebar{
+        width: 100vw;
+        left: -100vw;
+    }
+
+    .change .main-section{
+        left: 100vw;
+        width: 0;
+    }
+}
