@@ -29,6 +29,8 @@ body{
     background-color: var(--main-bg-color);
 }*/
 
+/**Sidebar Styles*/
+
 .sidebar{
     width: 15vw;
     height: 100vh;
@@ -329,6 +331,127 @@ body{
     letter-spacing: 1rem;
 }
 
+/**Navbar Styles*/
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow, .menu-link{
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--main-bg-color);
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-right: 4rem;
+}
+
+.follow{
+    pointer-events: auto;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    pointer-events: none;
+}
+
+.menu:hover{
+    pointer-events: auto;
+}
+
+.dash{
+    width: 10rem;
+    height: .1rem;
+    margin-right: 5rem;
+    position: relative;
+}
+
+.dash::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: var(--search-color);
+    transition: width .5s;
+}
+
+.menu:hover .dash::after{
+    width: 100%;
+}
+
+.nav-menu{
+    display: flex;
+}
+
+.menu-link{
+    text-decoration: none;
+    position: relative;
+    top: 3rem;
+    opacity: 0;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+.menu:hover .menu-link{
+    top: 0;
+    opacity: 1;
+}
+
+.menu-link:nth-child(1){
+    transition: top .5s .1s, 
+    opacity .5s .1s, 
+    background-color .3s;    
+}
+
+.menu-link:nth-child(2){
+    transition: top .5s .2s, 
+    opacity .5s .2s, 
+    background-color .3s;    
+}
+
+.menu-link:nth-child(3){
+    transition: top .5s .3s, 
+    opacity .5s .3s, 
+    background-color .3s;    
+}
+
+.menu-link:nth-child(4){
+    transition: top .5s .4s, 
+    opacity .5s .4s, 
+    background-color .3s;    
+}
+
+.menu-link:nth-child(5){
+    transition: top .5s .5s, 
+    opacity .5s .5s, 
+    background-color .3s;    
+}
+
+.menu-link:nth-child(1):hover{
+    background-color: #3b5998;
+}
+
+.menu-link:nth-child(2):hover{
+    background-color: #7232bd;
+}
+
+.menu-link:nth-child(3):hover{
+    background-color: black;
+}
+
+.menu-link:nth-child(4):hover{
+    background-color: #0077b5;
+}
+
+.menu-link:nth-child(5):hover{
+    background-color: #00acee;
+}
+
+/**Responsive Styles*/
 @media(max-width: 1500px){
     .sidebar{
         width: 20vw;
